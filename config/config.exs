@@ -5,10 +5,8 @@ alias Hush.Provider.{
   SystemEnvironment
 }
 
-{status, key} = File.read("priv/gcp_key.json")
-
 config :goth,
-  json: System.get_env("GOOGLE_APPLICATION_CREDENTIALS", key)
+  config_module: HushSampleApp.GothConfig
 
 config :hush,
   providers: [
