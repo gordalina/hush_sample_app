@@ -1,6 +1,6 @@
 # Hush Sample App
 
-[![Build Status](https://github.com/gordalina/hush/workflows/ci/badge.svg)](https://github.com/gordalina/hush/actions?query=workflow%3A%22ci%22)
+[![Build Status](https://github.com/gordalina/hush_sample_app/workflows/ci/badge.svg)](https://github.com/gordalina/hush_sample_app/actions?query=workflow%3A%22ci%22)
 
 This application is an example on how to use Hush as a configuration provider. As well as a end-to-end test for all providers.
 
