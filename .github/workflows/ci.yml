@@ -39,7 +39,8 @@ jobs:
           mix deps.get
           mix compile
       - name: Expectation
-        run: echo "[env: \"sam\", default: \"checks out\", gcp: \"bar\"]" > expected
+        run: |
+          echo "[env: \"sam\", default: \"checks out\", gcp: \"bar\"]" > expected
       - name: Release
         env:
           MIX_ENV: prod
