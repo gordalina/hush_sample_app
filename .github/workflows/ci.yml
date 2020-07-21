@@ -40,7 +40,7 @@ jobs:
           mix compile
       - name: Expectation
         run: |
-          echo "[gcp: \"bar\", env: \"$USER\", default: \"checks out\"]" > expected
+          echo "[default: \"checks out\", env: \"$USER\", gcp: \"bar\"]" > expected
       - name: Release
         env:
           MIX_ENV: prod

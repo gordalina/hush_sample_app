@@ -18,6 +18,9 @@ defmodule HushSampleApp do
   end
 
   def print_config() do
-    Application.get_all_env(:hush_sample_app) |> IO.inspect()
+    :hush_sample_app
+    |> Application.get_all_env()
+    |> List.keysort(0)
+    |> IO.inspect()
   end
 end
