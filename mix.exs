@@ -27,8 +27,8 @@ defmodule HushSampleApp.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:hush, "~> 0.1.0"},
-      {:hush_gcp_secret_manager, path: "../hush_gcp_secret_manager"}
+      {:hush, ">= 0.0.0"},
+      {:hush_gcp_secret_manager, ">= 0.0.0"}
     ]
   end
 end
