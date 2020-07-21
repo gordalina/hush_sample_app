@@ -7,7 +7,12 @@ defmodule HushSampleApp.MixProject do
       version: "0.0.1",
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      releases: [
+        hush_sample_app: [
+          config_providers: [{Hush.ConfigProvider, nil}]
+        ]
+      ]
     ]
   end
 
@@ -23,7 +28,7 @@ defmodule HushSampleApp.MixProject do
   defp deps do
     [
       {:hush, "~> 0.1.0"},
-      {:hush_gcp_secret_manager, "~> 0.1.0"}
+      {:hush_gcp_secret_manager, "~> 0.1.1"}
     ]
   end
 end

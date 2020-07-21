@@ -6,9 +6,18 @@ defmodule HushSampleApp do
   use Application
 
   def start(_type, _args1) do
-    Hush.resolve!()
-    Application.get_all_env(:hush_sample_app) |> IO.inspect()
+    unless Hush.release_mode?, do: Hush.resolve!()
+    print_config()
 
     {:ok, self()}
+  end
+
+  def start_eval() do
+    Application.ensure_loaded(:hush_sample_app)
+    print_config()
+  end
+
+  def print_config() do
+    Application.get_all_env(:hush_sample_app) |> IO.inspect()
   end
 end
