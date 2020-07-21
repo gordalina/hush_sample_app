@@ -37,6 +37,9 @@ jobs:
           mix local.rebar --force
           mix local.hex --force
           mix deps.get
+          mix compile
+      - name: Expectation
+        run: echo "[env: \"sam\", default: \"checks out\", gcp: \"bar\"]" > expected
       - name: Release
         env:
           MIX_ENV: prod
@@ -44,23 +47,15 @@ jobs:
       - name: Test runtime
         run: |
           mix > output
-
-          echo "output:"
-          cat output
+          diff expected output
       - name: Test release
         run: |
           _build/prod/rel/hush_sample_app/bin/hush_sample_app start > output &
           sleep 10
 
-          echo "output:"
-          cat output
-
+          diff expected output
           kill %1
       - name: Test eval
         run: |
-          _build/prod/rel/hush_sample_app/bin/hush_sample_app eval "HushSampleApp.start_eval()"
-
-          echo "output:"
-          cat output
-
-          kill %1
+          _build/prod/rel/hush_sample_app/bin/hush_sample_app eval "HushSampleApp.start_eval()" > output
+          diff expected output
