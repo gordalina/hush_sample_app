@@ -20,6 +20,7 @@ defmodule HushSampleApp do
   def print_config() do
     :hush_sample_app
     |> Application.get_all_env()
+    |> Enum.reject(fn ({app, config}) -> app == :included_applications end)
     |> List.keysort(0)
     |> IO.inspect()
   end
