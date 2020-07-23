@@ -20,3 +20,6 @@ config :hush_sample_app,
   gcp: {:hush, GcpSecretManager, "foo"},
   env: {:hush, SystemEnvironment, "USER"},
   default: {:hush, SystemEnvironment, "THIS_ENV_DOES_NOT_EXIST", [default: "checks out"]}
+
+config :sasl,
+  sasl_error_logger: false
