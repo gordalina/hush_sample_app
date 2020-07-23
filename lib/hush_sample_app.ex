@@ -13,14 +13,15 @@ defmodule HushSampleApp do
   end
 
   def start_eval() do
-    Application.ensure_loaded(:hush_sample_app)
+    Application.load(:hush_sample_app)
     print_config()
   end
 
+  @spec print_config :: any
   def print_config() do
     :hush_sample_app
     |> Application.get_all_env()
-    |> Enum.reject(fn ({app, config}) -> app == :included_applications end)
+    |> Enum.reject(fn ({app, _}) -> app == :included_applications end)
     |> List.keysort(0)
     |> IO.inspect()
   end
