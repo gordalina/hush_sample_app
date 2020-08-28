@@ -53,14 +53,14 @@ jobs:
             },
             aws_key: %{"key" => "value"},
             default: "checks out",
-            env: "sam",
+            env: "runner",
             gcp_bar: "bar",
             gcp_foo: "bar",
-            list: "sam",
-            list_nested: [level2: [user: "sam"]],
-            map: %{key: "sam"},
-            map_string: %{"key" => "sam"},
-            tuple: {"sam"}
+            list: "runner",
+            list_nested: [level2: [user: "runner"]],
+            map: %{key: "runner"},
+            map_string: %{"key" => "runner"},
+            tuple: {"runner"}
           ]' > expected
       - name: Release
         env:
