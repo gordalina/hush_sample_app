@@ -15,6 +15,7 @@ config :ex_aws,
 
 config :hush,
   providers: [
+    AwsSecretsManager,
     GcpSecretManager
   ]
 
