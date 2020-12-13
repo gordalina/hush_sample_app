@@ -29,7 +29,9 @@ defmodule HushSampleApp.MixProject do
     [
       {:hush, ">= 0.0.0"},
       {:hush_aws_secrets_manager, ">= 0.0.0"},
-      {:hush_gcp_secret_manager, ">= 0.0.0"}
+      {:hush_gcp_secret_manager, ">= 0.0.0"},
+      # keep this until hackney 1.16.1
+      {:hackney, git: "https://github.com/benoitc/hackney.git", tag: "a5be812", override: true}
     ]
   end
 end
