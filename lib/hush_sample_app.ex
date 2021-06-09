@@ -25,4 +25,6 @@ defmodule HushSampleApp do
     |> List.keysort(0)
     |> IO.inspect()
   end
+
+  def add1(value), do: value <> "1"
 end
