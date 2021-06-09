@@ -30,10 +30,8 @@ defmodule HushSampleApp.MixProject do
       {:hush, ">= 0.0.0"},
       {:hush_aws_secrets_manager, ">= 0.0.0"},
       {:hush_gcp_secret_manager, ">= 0.0.0"},
-      # keep this until hackney 1.16.1
-      {:hackney, git: "https://github.com/benoitc/hackney.git", tag: "master", override: true},
-      {:jose,
-       git: "https://github.com/potatosalad/erlang-jose.git", tag: "master", override: true}
+      {:hackney, "~> 1.17.4"},
+      {:jose, "~> 1.11.1"}
     ]
   end
 end
