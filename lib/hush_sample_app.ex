@@ -26,5 +26,5 @@ defmodule HushSampleApp do
     |> IO.inspect()
   end
 
-  def add1(value), do: value <> "1"
+  def add1(value), do: {:ok, value <> "1"}
 end
