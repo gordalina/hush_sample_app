@@ -37,7 +37,8 @@ config :hush_sample_app,
   ],
   map: %{key: {:hush, SystemEnvironment, "USER"}},
   map_string: %{"key" => {:hush, SystemEnvironment, "USER"}},
-  tuple: {{:hush, SystemEnvironment, "USER"}}
+  tuple: {{:hush, SystemEnvironment, "USER"}},
+  apply: {:hush, SystemEnvironment, "USER", apply: &{:ok, &1 <> "1"}}
 
 config :sasl,
   sasl_error_logger: false
