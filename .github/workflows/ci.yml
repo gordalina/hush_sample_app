@@ -19,7 +19,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - otp: 21.3
+          - otp: 22.3
             elixir: 1.10.4
           - otp: 22.3
             elixir: 1.11.4
@@ -30,8 +30,6 @@ jobs:
           - otp: 25.0
             elixir: 1.13.4
     runs-on: ubuntu-20.04
-    env:
-      GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
     steps:
       - uses: actions/checkout@v2
       - uses: erlef/setup-beam@v1
