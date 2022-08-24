@@ -30,6 +30,8 @@ jobs:
           - otp: 25.0
             elixir: 1.13.4
     runs-on: ubuntu-20.04
+    env:
+      GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
     steps:
       - uses: actions/checkout@v2
       - uses: erlef/setup-beam@v1
