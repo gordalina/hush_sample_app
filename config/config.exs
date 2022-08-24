@@ -6,9 +6,6 @@ alias Hush.Provider.{
   SystemEnvironment
 }
 
-config :goth,
-  config_module: HushSampleApp.GothConfig
-
 config :ex_aws,
   access_key_id: [{:system, "AWS_ACCESS_KEY_ID"}],
   secret_access_key: [{:system, "AWS_SECRET_ACCESS_KEY"}]
@@ -20,7 +17,8 @@ config :hush,
   ]
 
 config :hush_gcp_secret_manager,
-  project_id: "hush-sample-app"
+  project_id: "hush-sample-app",
+  goth: [name: HushSampleApp.GothHush]
 
 config :hush_sample_app,
   aws_json: {:hush, AwsSecretsManager, "prod/db"},

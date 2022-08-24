@@ -5,7 +5,7 @@ defmodule HushSampleApp.MixProject do
     [
       app: :hush_sample_app,
       version: "0.0.1",
-      elixir: "~> 1.9",
+      elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       releases: [
@@ -16,7 +16,6 @@ defmodule HushSampleApp.MixProject do
     ]
   end
 
-  # Run "mix help compile.app" to learn about applications.
   def application do
     [
       mod: {HushSampleApp, []},
@@ -24,7 +23,6 @@ defmodule HushSampleApp.MixProject do
     ]
   end
 
-  # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
       {:hush, ">= 0.0.0"},

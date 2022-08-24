@@ -23,5 +23,5 @@ erl_crash.dump
 hush_sample_app-*.tar
 
 # private gcp_key
-priv/gcp_key.json
+priv/service_account_key.json
 config/config.local.exs

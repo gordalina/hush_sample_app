@@ -9,12 +9,9 @@ defmodule HushSampleApp do
     unless Hush.release_mode?(), do: Hush.resolve!()
     print_config()
 
-    {:ok, self()}
-  end
+    Task.async(fn -> System.halt(0) end)
 
-  def start_eval() do
-    Application.load(:hush_sample_app)
-    print_config()
+    {:ok, self()}
   end
 
   @spec print_config :: any
