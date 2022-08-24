@@ -25,11 +25,10 @@ defmodule HushSampleApp.MixProject do
 
   defp deps do
     [
-      {:hush, ">= 0.0.0"},
-      {:hush_aws_secrets_manager, ">= 0.0.0"},
-      {:hush_gcp_secret_manager, ">= 0.0.0"},
-      {:hackney, "~> 1.17.4"},
-      {:jose, "~> 1.11.1"}
+      {:hush, "1.0.0-rc.0"},
+      {:hush_aws_secrets_manager, "1.0.0-rc.0"},
+      {:hush_gcp_secret_manager, "1.0.0-rc.0"},
+      {:jason, "~> 1.3"}
     ]
   end
 end
